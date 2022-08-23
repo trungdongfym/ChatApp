@@ -1,0 +1,106 @@
+<div class="container-fluid message">
+  <header class="header">
+    <div class="header__logo">
+      <a href="/messages" class="header__logo__link">
+        logo
+      </a>
+    </div>
+    <div class="header__content">
+      <ul class="header__content__list">
+        <li class="item">
+          <div class="item__friend">
+            <img src="https://img.icons8.com/external-anggara-glyph-anggara-putra/24/000000/external-friend-email-interface-anggara-glyph-anggara-putra.png" />
+          </div>
+        </li>
+        <li class="item">
+          <div class="item__notify">
+            <img src="https://img.icons8.com/material-sharp/24/000000/bell.png" />
+          </div>
+        </li>
+        <li class="item">
+          <div class="item__avatar">
+            <%
+              let userAvatar = "https://img.icons8.com/color/96/000000/circled-user-male-skin-type-6--v1.png";
+              let userActive = null;
+              if(data.user){
+                userActive = data.user;
+                userAvatar = userActive.avatar ? userActive.avatar : userAvatar;
+              }
+            %>
+            <img src="<%=userAvatar%>" alt="<%=userActive.name%>">
+          </div>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <main class="main">
+    <div class="messageList">
+      <div class="messageList__search">
+        <form action="" class="form">
+          <input type="text" class="form__input" placeholder="Tìm kiếm..." />
+        </form>
+        <span class="form__iconSearch">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </span>
+      </div>
+      <ul class="messageList__list crollSidebar">
+        <li class="item">
+          <a href="" class="item__link">
+            <div class="item__avatar">
+              <img src="https://hrmanagerment-s3-store.s3.ap-southeast-1.amazonaws.com/avatar-1659540829562-710959288vuonglam.jpg" alt="">
+            </div>
+            <div class="item__content">
+              <div class="item__content__name">Trung Đông</div>
+              <div class="item__content__message">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="messageContent">
+      <div class="messageContent__receiver">
+        <div class="avatar">
+          <img src="https://hrmanagerment-s3-store.s3.ap-southeast-1.amazonaws.com/avatar-1659540829562-710959288vuonglam.jpg" alt="">
+        </div>
+        <div class="info">
+          <div class="info__name">Trung Đông</div>
+          <div class="info__activeTime">Hoạt động 17 phút trước</div>
+        </div>
+      </div>
+      <div class="messageContent__content">
+        <ul class="messageContent__content__messageList" id="message__list">
+        </ul>
+      </div>
+      <div class="messageContent__inputMessage">
+        <form action="/messages" method="post" class="form" id="formMessage">
+          <textarea name="content" id="inputMessage" type="text" class="form__input"></textarea>
+          <div id="textContainer" class="form__textContainer"></div>
+          <button type="submit" class="form__btnSend">
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+  <script>
+    const user = {
+      userID: "<%=userActive.userID%>",
+      name: "<%=userActive.name%>",
+      avatar: "<%=userActive.avatar%>"
+    }
+    console.log(user);
+    localStorage.setItem("user", JSON.stringify(user))
+  </script>
+</div>
+<!-- import layout -->
+<% layout('../../common/base') -%>
+<% stylesheet('/styles/message.css') %>
+<% stylesheet('https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.css') %>
+<% script('https://cdn.socket.io/4.5.0/socket.io.min.js') %>
+<% script('/js/socketClient.js') %>
+<% script('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js') %>
+<% script('https://cdnjs.cloudflare.com/ajax/libs/emojione/4.5.0/lib/js/emojione.min.js') %>
+<% script('https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.js') %>
+<% script('/js/items.js') %>
+<% script('/js/message.js') %>
+<% block('title', 'messages' ); -%>

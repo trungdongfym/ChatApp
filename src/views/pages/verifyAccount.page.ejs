@@ -1,0 +1,74 @@
+<div class="loginWapper container">
+  <div class="loginWapper__formWapper row justify-content-center">
+    <form action="/register/verify" method="post" class="loginWapper__formWapper__form col-sm-12 col-md-6">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">
+          Mã xác nhận
+        </label>
+        <input type="otp" name="otp" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <p class="count-down mt-2">
+          Thời gian có hiệu lực:
+          <span id="exp-otp"></span>
+        </p>
+      </div>
+      <div class="btn-ground row justify-content-around">
+        <button type="submit" id="confirmOtp" class="btn btn-primary col-5">Xác nhận</button>
+        <a href="/register?resendOtp=true" class="btn btn-primary col-5">Gửi lại</a>
+      </div>
+      <% if(errors){ %>
+      <div id="emailHelp" class="form-text error-form"><%=errors%></div>
+      <% } %>
+      <% if(info){ %>
+      <div id="emailHelp" class="form-text"><%=info%></div>
+      <% } %>
+      <div class="or">hoặc</div>
+      <div class="other-login row justify-content-between">
+        <div class="other-login__content">
+          <a href="/login?provider=google" class="other-login__content__link">
+            <img src="https://img.icons8.com/color/30/FFFFFF/google-logo.png" />
+            <span class="text">google</span>
+          </a>
+        </div>
+        <div class="other-login__content">
+          <a href="/login?provider=facebook" class="other-login__content__link">
+            <img src="https://img.icons8.com/color/30/000000/facebook-new.png" />
+            <span class="text">facebook</span>
+          </a>
+        </div>
+      </div>
+    </form>
+  </div>
+  <% 
+    let countNumber = 0;
+    if(data && data.expireIn){
+      countNumber = data.expireIn;
+    } 
+  %>
+  <script>
+    const coundDownElement = document.getElementById('exp-otp');
+    const countDownText = document.getElementsByClassName('count-down');
+    const confirmBtn = document.getElementById('confirmOtp');
+
+    let count = "<%= countNumber %>";
+    count = parseInt(count);
+    let timeID = null;
+    if (count > 0) {
+      confirmBtn.disabled = false;
+      coundDownElement.textContent = count--;
+      timeID = setInterval(() => {
+        if (count === 0) {
+          clearInterval(timeID);
+          countDownText[0].classList.add('expired');
+          confirmBtn.disabled = true;
+        }
+        coundDownElement.textContent = count--;
+      }, 1000);
+    }
+  </script>
+</div>
+
+<!-- import layout -->
+<% layout('../common/base') -%>
+<% block('title', 'Verify account' ); -%>
+<% stylesheet('/styles/login.css') -%>
+<% stylesheet('/styles/register.css') -%>

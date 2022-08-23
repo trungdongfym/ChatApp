@@ -1,0 +1,32 @@
+.error-form {
+   color: red;
+}
+
+::-webkit-scrollbar {
+   width: 10px;
+   height: 20px;
+   position: relative;
+   left: 10px;
+}
+::-webkit-scrollbar-track {
+   border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+   background: rgba(128, 128, 128, 0.5);
+   border-radius: 8px;
+}
+
+.emojionearea.focused {
+   box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 5px rgb(238 130 238/60%) !important;
+}
+
+.emojionearea > .emojionearea-editor {
+   min-height: 0px;
+   max-height: 100px;
+   padding: 0 24px 0 12px;
+}
+
+.emojionearea-button {
+   top: 6px !important;
+}

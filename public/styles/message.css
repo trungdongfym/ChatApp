@@ -1,0 +1,327 @@
+.message {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+  padding: 5px 25px;
+}
+.header__logo {
+  font-size: large;
+  font-weight: 600;
+}
+.header__content {
+  width: 200px;
+}
+.header__content__list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  margin: 0;
+}
+.header__content__list .item {
+  cursor: pointer;
+  margin-right: 15px;
+}
+.header__content__list .item__avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.header__content__list .item__avatar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.crollSidebar::-webkit-scrollbar {
+  width: 8px;
+  height: 20px;
+  position: relative;
+  left: 10px;
+}
+
+.crollSidebar::-webkit-scrollbar-track {
+  border-radius: 8px;
+}
+
+.crollSidebar::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.5);
+  border-radius: 8px;
+}
+
+.main .messageList {
+  position: fixed;
+  width: 300px;
+  padding: 10px 20px;
+  border-right: 1px solid rgba(128, 128, 128, 0.3);
+}
+.main .messageList__search {
+  position: relative;
+  padding-left: 25px;
+  background: #f0f2f5;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+.main .messageList__search .form__input {
+  color: #555;
+  padding: 7px 10px;
+  font-size: 14px;
+  outline: none;
+  border: none;
+  background: #f0f2f5;
+}
+.main .messageList__search .form__iconSearch {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  color: gray;
+}
+.main .messageList__list {
+  overflow-y: scroll;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100vh - 95px);
+  margin: 0;
+  padding: 0;
+}
+.main .messageList__list .item {
+  margin: 5px 0;
+}
+.main .messageList__list .item__link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  padding: 5px;
+  margin-right: 5px;
+}
+.main .messageList__list .item__link:hover {
+  background: rgba(128, 128, 128, 0.3);
+  transition: all 0.2s ease;
+  border-radius: 3px;
+}
+.main .messageList__list .item__avatar {
+  height: 40px;
+  flex: 0 0 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.main .messageList__list .item__avatar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.main .messageList__list .item__content {
+  margin-left: 10px;
+}
+.main .messageList__list .item__content__name {
+  font-size: 15px;
+  font-weight: 500;
+}
+.main .messageList__list .item__content__message {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 14px;
+  color: gray;
+  width: 180px;
+}
+.main .messageContent {
+  position: fixed;
+  left: 300px;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 56px);
+  border-right: 1px solid rgba(128, 128, 128, 0.3);
+}
+.main .messageContent__receiver {
+  padding: 10px 20px;
+  display: flex;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+  align-items: center;
+  justify-content: start;
+}
+.main .messageContent__receiver .avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.main .messageContent__receiver .avatar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.main .messageContent__receiver .info {
+  margin-left: 10px;
+}
+.main .messageContent__receiver .info__name {
+  color: #333;
+  font-weight: 500;
+}
+.main .messageContent__receiver .info__activeTime {
+  font-size: 14px;
+  color: gray;
+}
+.main .messageContent__content {
+  width: 100%;
+  flex-grow: 1;
+  height: auto;
+  overflow-y: scroll;
+}
+.main .messageContent__content__messageList {
+  list-style: none;
+  padding: 15px 25px;
+  margin: 0;
+  width: 100%;
+}
+.main .messageContent__content__messageList .message__item {
+  width: 100%;
+  margin: 0 0 5px 0;
+}
+.main .messageContent__content__messageList .message__item .wrapper {
+  display: flex;
+}
+.main .messageContent__content__messageList .message__item .wrapper__avatar {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  overflow: hidden;
+  align-self: flex-end;
+}
+.main .messageContent__content__messageList .message__item .wrapper__avatar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.main .messageContent__content__messageList .message__item .wrapper__content {
+  padding: 8px 12px;
+  border-radius: 18px;
+}
+.main .messageContent__content__messageList .message__item .wrapper__content__text {
+  font-size: 15px;
+  font-family: sans-serif;
+  white-space: pre-wrap;
+}
+.main .messageContent__content__messageList .message__item .wrapper__content__text img {
+  width: 16px;
+  height: 16px;
+  object-fit: cover;
+}
+.main .messageContent__content__messageList .message__item .wrapper__icon {
+  display: flex;
+  align-items: center;
+  color: violet;
+}
+.main .messageContent__content__messageList .message__item .wrapper__viewers__list {
+  list-style: none;
+  display: flex;
+  justify-content: end;
+}
+.main .messageContent__content__messageList .message__item .wrapper__viewers__list .list__item {
+  margin: 5px 2px;
+}
+.main .messageContent__content__messageList .message__item .wrapper__viewers__list .list__item__wapper {
+  display: flex;
+  align-items: center;
+}
+.main .messageContent__content__messageList .message__item .wrapper__viewers__list .list__item__wapper .avatar {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  overflow: hidden;
+  align-self: flex-end;
+}
+.main .messageContent__content__messageList .message__item .wrapper__viewers__list .list__item__wapper .avatar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.main .messageContent__content__messageList .message__item .wrapper__viewers__list .list__item .more__viewer {
+  width: 15px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+}
+.main .messageContent__content__messageList .message__item .wrapper__viewers__list .list__item .more__viewer__linkDetail {
+  width: 100%;
+  height: 100%;
+  color: grey;
+  font-size: 14px;
+  font-weight: 550;
+  text-decoration: none;
+}
+.main .messageContent__content__messageList .message__item .wrapper.left__message .wrapper__content {
+  margin-left: 5px;
+}
+.main .messageContent__content__messageList .message__item .wrapper.right__message .wrapper__content {
+  margin-right: 5px;
+}
+.main .messageContent__content__messageList .message__item.only__emotion .wrapper__content {
+  background-color: #fff !important;
+}
+.main .messageContent__content__messageList .message__item.only__emotion .wrapper__content__text img {
+  width: 32px;
+  height: 32px;
+  user-select: none;
+}
+.main .messageContent__content__messageList .message__item.other .wrapper__content {
+  background-color: #e4e6eb;
+}
+.main .messageContent__content__messageList .me.message__item .wrapper {
+  justify-content: flex-end;
+}
+.main .messageContent__content__messageList .me.message__item .wrapper__content {
+  background-color: rgb(255, 68, 255);
+  color: #fff;
+}
+.main .messageContent__inputMessage {
+  width: 800px;
+  padding: 10px 0;
+}
+.main .messageContent__inputMessage .form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.main .messageContent__inputMessage .form__input {
+  font-size: 15px;
+  color: #333;
+  border: none;
+  outline: none;
+  color: #555;
+  padding: 7px 35px 7px 10px;
+  border-radius: 20px;
+  background: #f0f2f5;
+  font-weight: 500;
+  margin: 0 20px;
+}
+.main .messageContent__inputMessage .form__textContainer {
+  width: 700px;
+}
+.main .messageContent__inputMessage .form__btnSend {
+  border: 0;
+  background: #fff;
+  color: violet;
+}
+
+/*# sourceMappingURL=message.css.map */

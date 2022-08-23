@@ -1,0 +1,8 @@
+.count-down {
+   color: gray;
+   font-weight: 500;
+}
+
+.count-down.expired {
+   color: red;
+}

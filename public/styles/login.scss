@@ -1,0 +1,58 @@
+.loginWapper {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   &__formWapper {
+      margin: 0 auto;
+      width: 65%;
+      &__form {
+         border: 1px solid rgba($color: gray, $alpha: 0.2);
+         border-radius: 5px;
+         padding: 15px;
+         & .or {
+            margin-top: 15px;
+            text-transform: uppercase;
+            font-size: 12px;
+            color: gray;
+            text-align: center;
+         }
+         & .other-login {
+            margin: 15px 0;
+            &__content {
+               display: flex;
+               justify-content: center;
+               border: 1px solid rgba($color: gray, $alpha: 0.4);
+               border-radius: 2px;
+               padding: 0 !important;
+               flex-basis: 48%;
+               & .text {
+                  margin-left: 8px;
+               }
+               &:hover {
+                  background-color: rgba($color: gray, $alpha: 0.1);
+               }
+               &__link {
+                  padding: 5px;
+                  text-decoration: none;
+                  text-transform: capitalize;
+                  color: grey;
+                  display: block;
+                  width: 100%;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+               }
+            }
+         }
+      }
+      &__goto-register {
+         font-size: 12px;
+         display: flex;
+         justify-content: space-between;
+         & .content {
+            color: gray;
+         }
+      }
+   }
+}

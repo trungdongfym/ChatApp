@@ -1,0 +1,169 @@
+.users {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+  padding: 5px 25px;
+}
+.header__logo {
+  font-size: large;
+  font-weight: 600;
+}
+.header__logo__link {
+  text-decoration: none;
+  color: #333;
+}
+.header__content {
+  width: 200px;
+}
+.header__content__list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  margin: 0;
+}
+.header__content__list .item {
+  cursor: pointer;
+  margin-right: 15px;
+}
+.header__content__list .item__avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.header__content__list .item__avatar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  height: calc(100vh - 56px);
+  width: 100%;
+  position: relative;
+  top: 56px;
+}
+.main .userContainer {
+  width: 50%;
+  padding: 15px 0;
+  position: fixed;
+  border-left: 1px solid rgba(128, 128, 128, 0.3);
+  border-right: 1px solid rgba(128, 128, 128, 0.3);
+}
+.main .userContainer__listOptions {
+  display: flex;
+  justify-content: space-between;
+}
+.main .userContainer__listOptions__link {
+  flex-grow: 1;
+  font-weight: 500;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  color: #888;
+  font-size: 17px;
+  border-bottom: 2px solid #333;
+}
+.main .userContainer__listOptions__link.active {
+  color: #333;
+}
+.main .userContainer__search {
+  display: flex;
+  align-items: center;
+  background: #f0f2f5;
+  padding: 5px 10px;
+  margin: 10px;
+  border-radius: 10px;
+}
+.main .userContainer__search__input {
+  width: 100%;
+  color: #555;
+  font-weight: 500;
+  padding: 7px 10px;
+  font-size: 14px;
+  outline: none;
+  border: none;
+  background: #f0f2f5;
+}
+.main .userContainer__search__iconSearch {
+  display: flex;
+  align-items: center;
+  color: #555;
+}
+.main .userContainer__users {
+  padding: 15px 0;
+  height: calc(100vh - 154px);
+  overflow-y: scroll;
+  border-top: 0.5px solid rgba(128, 128, 128, 0.2);
+}
+.main .userContainer__users .userList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.main .userContainer__users .userList__userItem {
+  margin: 10px 15px;
+}
+.main .userContainer__users .userList__userItem__wrapper {
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+}
+.main .userContainer__users .userList__userItem__wrapper .linkToUser {
+  display: flex;
+  text-decoration: none;
+  flex-basis: 50%;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+.main .userContainer__users .userList__userItem__wrapper .linkToUser:hover {
+  background-color: rgba(136, 136, 136, 0.2);
+  transition: all 0.2s ease;
+}
+.main .userContainer__users .userList__userItem__wrapper .linkToUser__avatar {
+  height: 45px;
+  flex: 0 0 45px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.main .userContainer__users .userList__userItem__wrapper .linkToUser__avatar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.main .userContainer__users .userList__userItem__wrapper .linkToUser__name {
+  color: #555;
+  margin-left: 5px;
+  font-weight: 500;
+}
+.main .userContainer__users .userList__userItem__wrapper .addFriendsBtn {
+  display: block;
+  height: 40px;
+  border: none;
+  background: violet;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0 25px;
+  border-radius: 5px;
+}
+.main .userContainer__users .userList__userItem__wrapper .addFriendsBtn:hover {
+  background: rgba(238, 130, 238, 0.8);
+  transition: all 0.2s ease;
+}
+
+/*# sourceMappingURL=users.css.map */

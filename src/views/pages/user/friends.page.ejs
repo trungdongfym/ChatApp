@@ -1,0 +1,41 @@
+<div class="container-fluid users">
+  <header class="header">
+    <div class="header__logo">
+      <a href="/messages" class="header__logo__link">
+        logo
+      </a>
+    </div>
+    <div class="header__content">
+      <ul class="header__content__list">
+        <li class="item">
+          <div class="item__friend">
+            <img src="https://img.icons8.com/external-anggara-glyph-anggara-putra/24/000000/external-friend-email-interface-anggara-glyph-anggara-putra.png" />
+          </div>
+        </li>
+        <li class="item">
+          <div class="item__notify">
+            <img src="https://img.icons8.com/material-sharp/24/000000/bell.png" />
+          </div>
+        </li>
+        <li class="item">
+          <div class="item__avatar">
+            <%
+               let userAvatar = "https://img.icons8.com/color/96/000000/circled-user-male-skin-type-6--v1.png";
+               let userActive = null;
+               if(data.user){
+                 userActive = data.user;
+                 userAvatar = userActive.avatar ? userActive.avatar : userAvatar;
+               }
+             %>
+            <img src="<%=userAvatar%>" alt="<%=userActive.name%>">
+          </div>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <main class="main">
+  </main>
+</div>
+<!-- import layout -->
+<% layout('../../common/base') -%>
+<% block('title', 'users' ); -%>
